@@ -1,7 +1,13 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#bands {
+  h1 {
+    color: red;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+}
+
 h1 {
   color: blue;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
