@@ -5,7 +5,7 @@
             <div class="card">
                 <h5><%= band.name %></h5>
                 <p><%= band.description %></p>
-                <a href=#>See More</a>
+                <%= link_to "See More", band_path(band[:id]) %>
             </div>
         <% end %>
     </section>
