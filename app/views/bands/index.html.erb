@@ -1,3 +1,8 @@
 <main id="bands">
     <h1>ALL THE BANDS</h1>
+    <section id="band">
+        <% @bands.each do |band| %>
+            <p><%= band.name %></p>
+        <% end %>
+    </section>
 </main>
