@@ -1,8 +1,12 @@
 <main id="bands">
     <h1>ALL THE BANDS</h1>
-    <section id="band">
+    <section class="card-deck">
         <% @bands.each do |band| %>
-            <p><%= band.name %></p>
+            <div class="card">
+                <h5><%= band.name %></h5>
+                <p><%= band.description %></p>
+                <a href=#>See More</a>
+            </div>
         <% end %>
     </section>
 </main>
