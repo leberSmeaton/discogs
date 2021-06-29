@@ -36,9 +36,19 @@ body {
   }
 }
 
+.warning {
+  border-color: orange;
+  color: orange;
+  &:hover {
+    color: white;
+    background-color: orange;
+  }
+}
+
 .button-container {
   margin-top: 1rem;
   display: flex;
+  width: 50%;
 }
 
 form {
@@ -47,5 +57,9 @@ form {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+  }
+  .error-text {
+    color: red;
+    font-size: xx-small;
   }
 }

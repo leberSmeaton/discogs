@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    before_action :set_band, only: [:show, :destroy, :update]
+    before_action :set_band, only: [:show, :destroy, :edit, :update]
     before_action :set_genres, only: [:new, :edit]
 
     def index
@@ -17,12 +17,17 @@ class BandsController < ApplicationController
 
     def new
         # @genres = Genre.all
+        @band = Band.new
     end
 
     def create
         @band = Band.new(band_params)
-        @band.save
-        redirect_to bands_path
+        if @band.save
+            redirect_to bands_path
+        else
+            set_genres 
+            render "new"
+        end
     end
 
     def destroy
@@ -37,8 +42,12 @@ class BandsController < ApplicationController
     end
 
     def update
-        @band.update(band_params)
-        redirect_to bands_path
+        if @band.update(band_params)
+            redirect_to bands_path
+        else
+            set_genres
+            render "edit"
+        end
     end
 
     private
