@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    before_action :set_band, only: [:show, :destroy]
+    before_action :set_band, only: [:show, :destroy, :update]
+    before_action :set_genres, only: [:new, :edit]
 
     def index
         @bands = Band.all.includes(:genre)
@@ -15,7 +16,7 @@ class BandsController < ApplicationController
     end
 
     def new
-        @genres = Genre.all
+        # @genres = Genre.all
     end
 
     def create
@@ -31,6 +32,15 @@ class BandsController < ApplicationController
         redirect_to bands_path
     end
 
+    def edit
+        # @genres = Genre.all
+    end
+
+    def update
+        @band.update(band_params)
+        redirect_to bands_path
+    end
+
     private
     def band_params
         params.require(:band).permit(:name, :genre_id, :description)
@@ -42,5 +52,9 @@ class BandsController < ApplicationController
         rescue 
             render "not_found"
         end
+    end
+
+    def set_genres
+        @genres = Genre.all
     end
 end

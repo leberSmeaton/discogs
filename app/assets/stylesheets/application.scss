@@ -16,3 +16,36 @@
 body {
   background-color: #f7f7f7;
 }
+
+.btn {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 12px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.danger {
+  border-color: red;
+  color: red;
+  &:hover {
+    color: white;
+    background-color: red;
+  }
+}
+
+.button-container {
+  margin-top: 1rem;
+  display: flex;
+}
+
+form {
+  width: 50%;
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+}
