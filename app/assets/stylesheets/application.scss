@@ -49,6 +49,7 @@ body {
   margin-top: 1rem;
   display: flex;
   width: 50%;
+  justify-content: space-evenly;
 }
 
 form {
@@ -62,4 +63,9 @@ form {
     color: red;
     font-size: xx-small;
   }
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
 }
